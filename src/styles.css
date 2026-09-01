@@ -71,6 +71,7 @@
   --color-lavender: var(--lavender);
   --color-peach: var(--peach);
   --color-cream: var(--cream);
+  --color-placeholder: var(--placeholder);
   --font-sans: "Inter", sans-serif;
   --font-serif: "Cormorant Garamond", serif;
   --font-script: "Great Vibes", cursive;
@@ -90,6 +91,7 @@
   --lavender: oklch(0.682 0.194 297.8);
   --peach: oklch(0.840 0.090 35.1);
   --cream: oklch(0.971 0.020 65.1);
+  --placeholder: oklch(0.114 0.020 291.5);
   --background: var(--night);
   --foreground: oklch(0.957 0.012 325.7);
   --card: var(--purple-surface);
