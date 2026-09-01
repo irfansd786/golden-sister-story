@@ -231,6 +231,42 @@
 .animate-smoke { animation: smoke 1.2s ease-out forwards; }
 .animate-pulse-glow { animation: pulse-glow 2.4s ease-in-out infinite; }
 
+.birthday-page { isolation: isolate; overflow-x: hidden; }
+.section-inner { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; position: relative; z-index: 2; }
+.section-kicker { font-family: var(--font-sans); font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--color-gold); }
+.placeholder-box { display: grid; place-items: center; background: var(--color-placeholder); border: 1px solid color-mix(in oklab, var(--color-cream) 24%, transparent); color: color-mix(in oklab, var(--color-cream) 55%, transparent); font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-align: center; }
+.placeholder-box span { border: 1px solid color-mix(in oklab, var(--color-cream) 15%, transparent); padding: .35rem .55rem; }
+.polaroid-frame { background: var(--color-cream); padding: .55rem .55rem .85rem; box-shadow: 0 15px 35px color-mix(in oklab, var(--color-night) 70%, transparent); color: var(--color-night); cursor: pointer; transition: transform 220ms ease, box-shadow 220ms ease; }
+.polaroid-frame:hover { transform: translateY(-7px) rotate(0deg) !important; box-shadow: 0 22px 45px color-mix(in oklab, var(--color-night) 90%, transparent); }
+.polaroid-a { transform: rotate(-7deg); } .polaroid-b { transform: rotate(4deg); } .polaroid-c { transform: rotate(-3deg); } .polaroid-d { transform: rotate(7deg); } .polaroid-e { transform: rotate(-5deg); } .polaroid-f { transform: rotate(3deg); } .polaroid-g { transform: rotate(-2deg); } .polaroid-h { transform: rotate(6deg); }
+.gift-purple { --gift: var(--lavender); } .gift-pink { --gift: var(--birthday-pink); } .gift-gold { --gift: var(--gold); } .gift-teal { --gift: oklch(0.45 0.1 177); } .gift-dark { --gift: var(--gold-bright); }
+.gift-box { position: relative; width: 112px; height: 106px; border-radius: .25rem; background: var(--gift); box-shadow: 0 14px 28px color-mix(in oklab, var(--gift) 28%, transparent); transition: transform 220ms ease, filter 220ms ease; }
+.gift-box:hover { transform: translateY(-8px) rotate(-2deg); filter: brightness(1.15); }
+.gift-box::before { content: ""; position: absolute; inset: 0 auto 0 46%; width: 13px; background: color-mix(in oklab, var(--cream) 55%, var(--gift)); }
+.gift-box::after { content: ""; position: absolute; left: 0; right: 0; top: 22px; height: 12px; background: color-mix(in oklab, var(--cream) 55%, var(--gift)); }
+.gift-lid { position: absolute; left: -8px; right: -8px; top: -9px; height: 28px; border-radius: .25rem; background: color-mix(in oklab, var(--gift) 82%, var(--cream)); z-index: 2; transition: transform 240ms ease; }
+.gift-box.open .gift-lid { transform: translateY(-21px) rotate(-5deg); }
+.gift-bow { position: absolute; z-index: 3; left: 50%; top: -22px; width: 19px; height: 22px; border: 5px solid color-mix(in oklab, var(--cream) 55%, var(--gift)); border-radius: 60% 20% 50% 20%; transform: translateX(-90%) rotate(-25deg); }
+.gift-bow::after { content: ""; position: absolute; left: 11px; top: -5px; width: 19px; height: 22px; border: 5px solid color-mix(in oklab, var(--cream) 55%, var(--gift)); border-radius: 20% 60% 20% 50%; transform: rotate(50deg); }
+.balloon-shape { position: relative; width: 76px; height: 94px; border-radius: 50% 50% 45% 45%; background: var(--balloon); box-shadow: inset -10px -10px 18px color-mix(in oklab, var(--night) 22%, transparent), inset 8px 8px 12px color-mix(in oklab, var(--cream) 22%, transparent), 0 0 18px color-mix(in oklab, var(--balloon) 35%, transparent); cursor: pointer; transition: transform 200ms ease, opacity 250ms ease; }
+.balloon-shape::before { content: ""; position: absolute; left: 50%; bottom: -9px; width: 12px; height: 12px; background: var(--balloon); transform: translateX(-50%) rotate(45deg); }
+.balloon-shape::after { content: ""; position: absolute; left: 50%; top: 96%; width: 1px; height: 90px; background: color-mix(in oklab, var(--cream) 35%, transparent); }
+.balloon-shape:hover { transform: translateY(-6px) scale(1.04); }
+.balloon-purple { --balloon: var(--lavender); } .balloon-pink { --balloon: var(--pink-bright); } .balloon-gold { --balloon: var(--gold); } .balloon-blue { --balloon: oklch(0.62 0.13 245); } .balloon-magenta { --balloon: var(--birthday-pink); } .balloon-teal { --balloon: oklch(0.55 0.12 177); }
+.balloon-popped { opacity: 0; transform: scale(1.35); pointer-events: none; }
+.fairy-string { position: absolute; height: 1px; background: color-mix(in oklab, var(--color-gold-bright) 58%, transparent); transform-origin: left center; }
+.fairy-string::before, .fairy-string::after { content: ""; position: absolute; top: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--color-gold-bright); box-shadow: 0 0 12px var(--color-gold-bright); }
+.fairy-string::before { left: 16%; } .fairy-string::after { left: 74%; }
+.floral-corner { position: absolute; bottom: -22px; font-size: 6rem; line-height: 1; color: var(--color-birthday-pink); opacity: .28; }
+.floral-corner.left { left: -10px; } .floral-corner.right { right: -10px; transform: scaleX(-1); }
+
+@media (max-width: 700px) {
+  .section-inner { width: min(100% - 2rem, 560px); }
+  .balloon-shape { width: 60px; height: 76px; font-size: .55rem; }
+  .balloon-shape::after { height: 60px; }
+  .gift-box { width: 90px; height: 88px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
