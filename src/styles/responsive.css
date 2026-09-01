@@ -1,0 +1,28 @@
+@media (max-width: 700px) {
+  .section-inner {
+    width: min(100% - 2rem, 560px);
+  }
+  .balloon-shape {
+    width: 60px;
+    height: 76px;
+    font-size: 0.55rem;
+  }
+  .balloon-shape::after {
+    height: 60px;
+  }
+  .gift-box {
+    width: 90px;
+    height: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

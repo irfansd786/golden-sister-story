@@ -1,0 +1,54 @@
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background: var(--color-birthday-pink);
+    color: var(--color-cream);
+  }
+}
+
+.birthday-page {
+  isolation: isolate;
+  overflow-x: hidden;
+}
+.section-inner {
+  width: min(1120px, calc(100% - 3rem));
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+}
+.section-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+.placeholder-box {
+  display: grid;
+  place-items: center;
+  background: var(--color-placeholder);
+  border: 1px solid color-mix(in oklab, var(--color-cream) 24%, transparent);
+  color: color-mix(in oklab, var(--color-cream) 55%, transparent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+.placeholder-box span {
+  border: 1px solid color-mix(in oklab, var(--color-cream) 15%, transparent);
+  padding: 0.35rem 0.55rem;
+}
